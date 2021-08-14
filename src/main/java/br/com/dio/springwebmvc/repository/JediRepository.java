@@ -11,6 +11,8 @@ public interface JediRepository extends JpaRepository<Jedi, Long> {
 
     List<Jedi> findByNameContainingIgnoreCase(final String name);
 
+    List<Jedi> findByLastNameContainingIgnoreCase(final String lastName);
+
 }
 
 /*

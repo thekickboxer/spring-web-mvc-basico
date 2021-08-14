@@ -39,6 +39,16 @@ public class JediController {
         return modelAndView;
     }
 
+    @GetMapping("/searchLastName")
+    public ModelAndView jediSearchLastName(@RequestParam(value = "lastName") final String lastName) {
+
+        final ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("jedi");
+        modelAndView.addObject("allJedi", repository.findByLastNameContainingIgnoreCase(lastName));
+
+        return modelAndView;
+    }
+
     @GetMapping("/new-jedi")
     public String createJedi(Model model) {
 
@@ -70,7 +80,7 @@ public class JediController {
         final Optional<Jedi> jedi = repository.findById(id);
         repository.delete(jedi.get());
 
-        redirect.addFlashAttribute("message", "Jedi successfully deleted.");
+        redirect.addFlashAttribute( "message", "Jedi successfully deleted.");
 
         return "redirect:/jedi";
     }

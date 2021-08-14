@@ -29,13 +29,21 @@
         </tr>
     </table>
 
-<br>
+    <br>
 
-<a href="#" th:href="@{/jedi}">All Jedi</a> | <a href="#" th:href="@{/new-jedi}">New Jedi</a>
+    <a href="#" th:href="@{/jedi}">All Jedi</a> | <a href="#" th:href="@{/new-jedi}">New Jedi</a>
 
-<form th:action="@{/search}"  method="get">
-    <input type="text" name="name"/> <button type="submit">Search</button>
-</form>
+    <br /><br />
+
+    <form th:action="@{/search}"  method="get">
+        <input type="text" name="name"/> <button type="submit">Search</button>
+    </form>
+
+    <br />
+
+    <form th:action="@{/searchLastName}"  method="get">
+        <input type="text" name="lastName"/> <button type="submit">Search by last name</button>
+    </form>
 
 </body>
 </html>
