@@ -14,31 +14,3 @@ public interface JediRepository extends JpaRepository<Jedi, Long> {
     List<Jedi> findByLastNameContainingIgnoreCase(final String lastName);
 
 }
-
-/*
-import br.com.dio.springwebmvc.model.Jedi;
-import org.springframework.stereotype.Repository;
-
-import java.util.ArrayList;
-import java.util.List;
-
-@Repository
-public class JediRepository {
-
-    final List<Jedi> listaJedi;
-
-    public JediRepository() {
-        listaJedi = new ArrayList<>();
-        //listaJedi.add(new Jedi("Luke", "Skywalker"));
-    }
-
-    public List<Jedi> getAllJedi() {
-        return listaJedi;
-    }
-
-    public void add(Jedi jedi) {
-        listaJedi.add(jedi);
-    }
-
-}
-*/
